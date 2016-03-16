@@ -3,7 +3,7 @@ layout: page
 title: Spark: from dummy to expert
 tagline:
 author: Gabi Ras
-<!--description: this is a test -->
+description: this is a test 
 ---
 # The basics
 <!--Introduce the reader briefly to spark, and, if you like, the way you carry out the assignment: in the terminal room or at home, deviations from the default suggested commands that you needed to get things running conveniently, etc..-->
