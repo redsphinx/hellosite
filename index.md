@@ -21,6 +21,10 @@ The advantages of Spark over similar frameworks like ?? and ?? are ??.
 #### Step 1: Getting started with Spark
 When I was learning Spark I followed [this Spark notebook](http://rubigdata.github.io/course/assignments/A2a-spark-101.html) to learn the basics. The first thing to note is that we worked in Scala. I've never worked with Scala before, I am much more comfortable with Python, but I chose to do the Scala notebooks because it is [simply more complete](http://rubigdata.github.io/course/background/spark-notebook.html) than the Python notebook. But there are [better reasons](https://www.linkedin.com/pulse/why-i-choose-scala-apache-spark-project-lan-jiang) to choosing Scala over Python, for example, Scala is in general faster than Python because Spark is built on Scala.
 
+some other links:
+- https://www.quora.com/Is-Scala-a-better-choice-than-Python-for-Apache-Spark
+- http://spark.apache.org/docs/latest/programming-guide.html
+
 ##### What I've learned
 <!--Briefly explain what you learned about going through the notebook. Copy the most relevant commands (modified where you thought interesting), and add a brief explanation of what the commands do. (View as report can be a handy feature!)-->
 
