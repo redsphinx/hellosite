@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Spark: from dummy to expert
-<!--tagline: alpha-->
+tagline:
 author: Gabi Ras
 <!--description: this is a test -->
 ---
