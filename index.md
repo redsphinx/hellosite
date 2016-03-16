@@ -1,8 +1,7 @@
 ---
 layout: page
 title: Spark: from dummy to expert
-tagline:
-author: Gabi Ras
+tagline: Gabi Ras
 description: this is a test 
 ---
 # The basics
