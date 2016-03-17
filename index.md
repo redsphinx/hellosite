@@ -88,6 +88,6 @@ words.filter(_._1 == "macbeth").collect
   .map({case (w,c) => "%s occurs %d times".format(w,c)}).map(println)
 ```
 
-gives a count of 284. The reason for this is
+gives a count of 284. The reason for this is that in the second codeblock, we get rid of capital letters, making the filter count the lower case "macbeth" occurences also. 
 
 
