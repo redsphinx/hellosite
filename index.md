@@ -92,4 +92,11 @@ gives a count of 284. The reason for this is that in the second codeblock, we ge
 
 #### Step 2: Understanding PairRDDs
 
-For this part we used [this notebook](http://rubigdata.github.io/course/assignments/BigData-big-data-execution-model.snb). In this notebook they use the notion of a PairRDD. PairRDDs are RDDs of key/value pairs, making it possible to group together data with the same key. They are a common data type required for many operations in Spark. 
+For this part we used [this notebook](http://rubigdata.github.io/course/assignments/BigData-big-data-execution-model.snb). In this notebook they use the notion of a PairRDD. PairRDDs are RDDs of key/value pairs, making it possible to group together data with the same key. They are a common data type required for many operations in Spark. We create them like this:
+
+```
+val rdd1 = sc.parallelize(0 to 999,8)
+val rddp = rdd1.map(x => (x % 100, 1000 - x))
+```
+
+When we have PairRDDs, we want to partition them so we can run tasks in parallel. We do this with `partitioner`, which defines how the elements in a key/value PairRDD are partitioned by key. An example of a partitioner is a `HashPartitioner`, which partitions keys by their hashcode. Sometimes we will get the output that partitioner = None. This happens when your dataset is distributed uniformly between partitions, like when you use `map`. From the notebook: > Partitioning depends on the distributed operations that are executed, and only operations with guarantees about the output distribution will carry an existing partitioner over to its result.
