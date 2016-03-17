@@ -49,8 +49,9 @@ val lines = sc.textFile("data/100.txt.utf-8")
 ```
 
 ##### What's the difference between...?
-**`map` vs `flatMap`**
-ajsfgasfgasj
+`map` vs `flatMap`
+
+`map` transforms an RDD of length N into another RDD of length N, while `flatMap` transforms an RDD of length N into a collection of N collections, then flattens these into a single RDD of results. If you are familiar with Python, `flatMap` is kind of like a `split()` and `join()` being done. 
 
 
 ##### Questions when counting
