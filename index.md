@@ -51,12 +51,19 @@ val lines = sc.textFile("data/100.txt.utf-8")
 ##### What's the difference between...?
 `map` vs `flatMap`
 
-`map` transforms an RDD of length N into another RDD of length N, while `flatMap` transforms an RDD of length N into a collection of N collections, then flattens these into a single RDD of results. If you are familiar with Python, `flatMap` is kind of like a `split()` and `join()` being done. 
+`map` transforms an RDD of length N into another RDD of length N, while `flatMap` transforms an RDD of length N into a collection of N collections, then flattens these into a single RDD of results. If you are familiar with Python, `flatMap` is kind of like a `split()` and `join()` being done. You would want to do a `flatMap` instead of a `map` when you want your data separated by instance while belonging to the same collection. 
 
+`take` vs `collect`
+
+Usually used when printing the contents of an RDD, these methods serve a similar yet different purpose. Use `take` when you only want to print a few elements of an RDD and use `collect` when you want to print the entire RDD, as `collect` fetches the entire RDD to a single machine.
 
 ##### Questions when counting
 In the notebook, counting words is used as the running example. At some point the question is asked *Q: Explain why there are multiple result files.* and  *Q: why are the counts different?* 
-explain this stuff
-<!--Briefly explain what you learned about going through the notebook. Copy the most relevant commands (modified where you thought interesting), and add a brief explanation of what the commands do. (View as report can be a handy feature!)-->
 
-<!--Do not forget to include what you learn from inspecting the Spark UI after issuing commands from the notebook! (Hint: comment on lazy evaluation and/or the effect of caching RDDs.)-->
+**Q: Explain why there are multiple result files**
+
+A: blabla
+
+**Q: Why are the counts so different?**
+
+A: blabla
