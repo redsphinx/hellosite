@@ -58,11 +58,11 @@ val lines = sc.textFile("data/100.txt.utf-8")
 Usually used when printing the contents of an RDD, these methods serve a similar yet different purpose. Use `take` when you only want to print a few elements of an RDD and use `collect` when you want to print the entire RDD, as `collect` fetches the entire RDD to a single machine.
 
 ##### Questions when counting
-In the notebook, counting words is used as the running example. At some point the question is asked *Q: Explain why there are multiple result files.* and  *Q: why are the counts different?* 
+In the notebook, counting words is used as the running example. At some point 2 questions are asked:
 
 **Q: Explain why there are multiple result files**
 
-A: blabla
+A: 
 
 **Q: Why are the counts so different?**
 
