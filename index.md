@@ -48,6 +48,10 @@ When we called `parallelize`, that was 1 way to create a RDD, so to use a collec
 val lines = sc.textFile("data/100.txt.utf-8")
 ```
 
+##### What's the difference between...?
+**`map` vs `flatMap`**
+ajsfgasfgasj
+
 
 ##### Questions when counting
 In the notebook, counting words is used as the running example. At some point the question is asked *Q: Explain why there are multiple result files.* and  *Q: why are the counts different?* 
