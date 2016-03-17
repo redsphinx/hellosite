@@ -25,7 +25,10 @@ Since you want to learn the basics of Spark, sometimes I will go over key concep
 I've mentioned before that RDD stands for *resilient distributed dataset* and briefly mentioned how it works. But what is an RDD? The easiest way to intuitively get what an RDD is is to first just consider it as a data structure: an abstract object that holds information which we can manipulate. Spark was developed in response to the limitations of MR. When making complex applications and executing complex queries, there is need for efficient primitives for sharing data that MR lacks. In MR the only way to share data across jobs is stable storage, i.e. writing to disk, and that is slow. So the challenge was to design a distributed memory abstraction that is both fault-tolerant and efficient. And so the RDD was born: a restricted form of distributed shared memory, through  immutable, partitioned collections of records and coarse-grained deterministic transformations. An immutable object (unchangeable object) is an object whose state cannot be modified after it is created. Coarse-grained means you can write you transformations to be applied to the whole dataset, but not individual elements on the dataset. Efficient fault recovery happens because Spark caches [lineage](http://stackoverflow.com/questions/30699530/in-apache-spark-how-does-lineage-get-passed-down-in-rdds). That was RDDs in a nutshell and you can find more information about this [over here](http://www.cs.berkeley.edu/~matei/talks/2012/nsdi_rdds.pdf). 
 
 ##### Spark UI
+A useful feature of Spark is the Spark UI. This is a monitoring tool, by default on port 4040, that displays useful information about your Spark application, such as jobs, stages, RDD size and memory usage and information about running executors. 
 
+##### Basic commands
+For this part we will take a look at the notebook. 
 
 <!--some other links:-->
 <!--- https://www.quora.com/Is-Scala-a-better-choice-than-Python-for-Apache-Spark-->
