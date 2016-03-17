@@ -34,7 +34,11 @@ For this part we will take a look at the notebook. The most basic thing is to kn
 val rdd = sc.parallelize(0 to 999,8)
 ```
 
-RDDs support two types of operations: transformations and actions. Transformations create new datasets from existing ones and actions return values after doing a computation on a dataset. *All transformations in Spark are lazy*, in that they do not compute their results right away.
+RDDs support two types of operations: transformations and actions. Transformations create new datasets from existing ones and actions return values after doing a computation on a dataset. *All transformations in Spark are lazy*, in that they do not compute their results right away. So if we look at the Spark UI there are no [jobs or stages](https://www.mapr.com/blog/getting-started-spark-web-ui) scheduled. When we execute the next command, which is an action and we look at the UI, we can see that there are 2 jobs and stages scheduled: this is because of the laziness, now it executes the transformation and the action:
+
+```
+val sample = rdd.takeSample(false, 4)
+```
 
 
 <!--some other links:-->
