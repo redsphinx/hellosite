@@ -107,7 +107,7 @@ When we have PairRDDs, we want to partition them so we can run tasks in parallel
 
 ##### Query plan
 
-A query plan (or query execution plan) is an ordered set of steps used to access data. Let's take a closer look at the following 2 RDDs. 
+A query plan is an ordered set of steps used to access data. Let's take a closer look at the following 2 RDDs. 
 
 `rddC`:
 
@@ -143,4 +143,11 @@ rddD.takeSample(true, 10);
 res28: Array[(Int, Int)] = Array((51,759), (57,453), (88,922), (81,29), (8,602), (35,275), (57,753), (33,277), (5,305), (59,551))
 ```
 
+From the documentation:
+
+**CoalescedRDD**: Coalesce the partitions of a parent RDD (prev) into fewer partitions, so that each partition of this RDD computes one or more of the parent ones. Will produce exactly maxPartitions if the parent had more than this many partitions, or fewer if the parent had fewer. This transformation is useful when an RDD with many partitions gets filtered into a smaller one, or to avoid having a large number of small tasks when processing a directory with many files.
+
+**MapPartitionsRDD**: MapPartitionsRDD is an RDD that applies the provided function f to every partition of the parent RDD. By default, it does not preserve partitioning — the last input parameter preservesPartitioning is false. If it is true, it retains the original RDD’s partitioning.
+
+**ShuffledRDD**: ShuffledRDD is an RDD of (key, value) pairs. It is a shuffle step (the result RDD) for transformations that trigger shuffle at execution. Such transformations ultimately call coalesce transformation with shuffle input parameter true (default: false).
 
