@@ -99,8 +99,48 @@ val rdd1 = sc.parallelize(0 to 999,8)
 val rddp = rdd1.map(x => (x % 100, 1000 - x))
 ```
 
+##### Partitioning
+
 When we have PairRDDs, we want to partition them so we can run tasks in parallel. We do this with `partitioner`, which defines how the elements in a key/value PairRDD are partitioned by key. An example of a partitioner is a `HashPartitioner`, which partitions keys by their hashcode. Sometimes we will get the output that partitioner = None. This happens when your dataset is distributed uniformly between partitions, like when you use `map`. From the notebook: 
 
 > Partitioning depends on the distributed operations that are executed, and only operations with guarantees about the output distribution will carry an existing partitioner over to its result.
+
+##### Query plan
+
+A query plan (or query execution plan) is an ordered set of steps used to access data. Let's take a closer look at the following 2 RDDs. 
+
+`rddC`:
+
+```
+rddC.toDebugString
+res25: String =
+(2) MapPartitionsRDD[15] at repartition at <console>:51 []
+ |  CoalescedRDD[14] at repartition at <console>:51 []
+  |  ShuffledRDD[13] at repartition at <console>:51 []
+   +-(4) MapPartitionsRDD[12] at repartition at <console>:51 []
+       |  MapPartitionsRDD[10] at map at <console>:50 []
+           |  MapPartitionsRDD[9] at values at <console>:50 []
+               |  ShuffledRDD[8] at partitionBy at <console>:49 []
+                   +-(8) MapPartitionsRDD[3] at map at <console>:48 []
+                          |  ParallelCollectionRDD[1] at parallelize at <console>:47 []
+
+rddC.takeSample(true, 10);
+res27: Array[Int] = Array(503, 356, 27, 552, 742, 228, 127, 717, 1002, 283)
+```
+
+and `rddD`:
+
+```
+rddD.toDebugString
+res26: String =
+(2) CoalescedRDD[16] at coalesce at <console>:51 []
+ |  MapPartitionsRDD[11] at mapValues at <console>:50 []
+  |  ShuffledRDD[8] at partitionBy at <console>:49 []
+   +-(8) MapPartitionsRDD[3] at map at <console>:48 []
+       |  ParallelCollectionRDD[1] at parallelize at <console>:47 []
+
+rddD.takeSample(true, 10);
+res28: Array[(Int, Int)] = Array((51,759), (57,453), (88,922), (81,29), (8,602), (35,275), (57,753), (33,277), (5,305), (59,551))
+```
 
 
