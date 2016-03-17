@@ -40,12 +40,9 @@ RDDs support two types of operations: transformations and actions. Transformatio
 val sample = rdd.takeSample(false, 4)
 ```
 
-
-<!--some other links:-->
-<!--- https://www.quora.com/Is-Scala-a-better-choice-than-Python-for-Apache-Spark-->
-<!--- http://spark.apache.org/docs/latest/programming-guide.html-->
-
-##### What I've learned
+##### Questions when counting
+In the notebook, counting words is used as the running example. At some point the question is asked *Q: Explain why there are multiple result files.* and  *Q: why are the counts different?* 
+explain this stuff
 <!--Briefly explain what you learned about going through the notebook. Copy the most relevant commands (modified where you thought interesting), and add a brief explanation of what the commands do. (View as report can be a handy feature!)-->
 
 <!--Do not forget to include what you learn from inspecting the Spark UI after issuing commands from the notebook! (Hint: comment on lazy evaluation and/or the effect of caching RDDs.)-->
