@@ -34,9 +34,7 @@ For this part we will take a look at the notebook. The most basic thing is to kn
 val rdd = sc.parallelize(0 to 999,8)
 ```
 
-Here we call the [SparkContext](http://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.SparkContext)'s
- ```parallelize```  
- method. This is how to create a parallelized collection holding the numbers 0 to 998, split in 8 partitions. SparkContext is the main entry point for Spark functionality. It represents the connection to a Spark cluster, and can be used to create RDDs, accumulators and broadcast variables on that cluster.
+Here we call the [SparkContext](http://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.SparkContext)'s `parallelize` method. This is how to create a parallelized collection holding the numbers 0 to 998, split in 8 partitions. SparkContext is the main entry point for Spark functionality. It represents the connection to a Spark cluster, and can be used to create RDDs, accumulators and broadcast variables on that cluster.
 
 RDDs support two types of operations: transformations and actions. Transformations create new datasets from existing ones and actions return values after doing a computation on a dataset. *All transformations in Spark are lazy*, in that they do not compute their results right away. So if we look at the Spark UI there are no [jobs or stages](https://www.mapr.com/blog/getting-started-spark-web-ui) scheduled. When we execute the next command, which is an action and we look at the UI, we can see that there are 2 jobs and stages scheduled. This is because of the laziness, now it executes the transformation and the action:
 
