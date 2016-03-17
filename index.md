@@ -90,4 +90,6 @@ words.filter(_._1 == "macbeth").collect
 
 gives a count of 284. The reason for this is that in the second codeblock, we get rid of capital letters, making the filter count the lower case "macbeth" occurences also. 
 
+#### Step 2: Understanding PairRDDs
 
+For this part we used [this notebook](http://rubigdata.github.io/course/assignments/BigData-big-data-execution-model.snb). In this notebook they use the notion of a PairRDD. PairRDDs are RDDs of key/value pairs, making it possible to group together data with the same key. They are a common data type required for many operations in Spark. 
