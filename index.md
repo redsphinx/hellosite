@@ -151,3 +151,8 @@ From the documentation:
 
 **ShuffledRDD**: ShuffledRDD is an RDD of (key, value) pairs. It is a shuffle step (the result RDD) for transformations that trigger shuffle at execution. Such transformations ultimately call coalesce transformation with shuffle input parameter true (default: false).
 
+So what was going on in the previous 2 codeblocks with rddC and rddD? 
+
+#### Step 3: ???
+
+#### Step 4: profit $$$
