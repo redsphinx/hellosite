@@ -8,10 +8,9 @@ description: this is a test
 - [So what is Spark?](#)
 - [Step 1: Getting started with Spark](#)
   - [Understanding the need for RDDs](#)
-    - [Spark UI](#)
-      - [Basic commands](#)
-        - [What I've learned](#)
----
+  - [Spark UI](#)
+  - [Basic commands](#)
+  - [What I've learned](#)
 #### A brief history of big data
 
 The problem of dealing with large quantities of data begun much earlier than is widely known: it took 8 years to tabulate the 1880 US Census, and this was before the population boom of 1930. After that the problem only got worse as more data about more people was generated. It was not only data about people that had to be kept easily accessible; libraries also had to adapt their storage methods to meet the quickly increasing demand of new publications and research. [This is a nice overview](http://www.winshuttle.com/big-data-timeline/) depicting milestones in big data. With the invention of the modern computer there was also the invention of multitasking and multiprocessing methods. Before the era of cheap computers, the principal use for multitasking was to allow many people to share the same computer. 
