@@ -62,8 +62,32 @@ In the notebook, counting words is used as the running example. At some point 2 
 
 **Q: Explain why there are multiple result files**
 
-A: 
+A: When we look at the UI, we can see that the stage `saveAsTextFile` exists out of 2 tasks. When we look back at when we create `val words` we can see that we used the `flatMap` and `map` transformations to create it. So, since we have lazy evaluation, they get executed now and 2 output files are created.
 
 **Q: Why are the counts so different?**
 
-A: blabla
+A: 
+
+```
+val words = lines.flatMap(line => line.split(" "))
+              .filter(_ != "")
+              .map(word => (word,1))
+val wc = words.reduceByKey(_ + _)
+wc.filter(_._1 == "Macbeth").collect
+```
+
+gives a count of 30, while
+
+```
+val words = lines.flatMap(line => line.split(" "))
+              .map(w => w.toLowerCase().replaceAll("(^[^a-z]+|[^a-z]+$)", ""))
+              .filter(_ != "")
+              .map(w => (w,1))
+              .reduceByKey( _ + _ )
+words.filter(_._1 == "macbeth").collect
+  .map({case (w,c) => "%s occurs %d times".format(w,c)}).map(println)
+```
+
+gives a count of 284. The reason for this is
+
+
