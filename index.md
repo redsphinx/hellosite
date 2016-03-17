@@ -29,6 +29,7 @@ A useful feature of Spark is the Spark UI. This is a monitoring tool, by default
 
 ##### Basic commands
 For this part we will take a look at the notebook. The most basic thing is to know how to make an RDD: 
+
 ```
 val rdd = sc.parallelize(0 to 999,8)
 ```
