@@ -28,11 +28,13 @@ I've mentioned before that RDD stands for *resilient distributed dataset* and br
 A useful feature of Spark is the Spark UI. This is a monitoring tool, by default on port 4040, that displays useful information about your Spark application, such as jobs, stages, RDD size and memory usage and information about running executors. 
 
 ##### Basic commands
-For this part we will take a look at the notebook. 
-
+For this part we will take a look at the notebook. The most basic thing is to know how to make an RDD: 
 ```scala
 val rdd = sc.parallelize(0 to 999,8)
 ```
+RDDs support two types of operations: transformations and actions. Transformations create new datasets from existing ones and actions return values after doing a computation on a dataset. *All transformations in Spark are lazy*, in that they do not compute their results right away.
+
+
 <!--some other links:-->
 <!--- https://www.quora.com/Is-Scala-a-better-choice-than-Python-for-Apache-Spark-->
 <!--- http://spark.apache.org/docs/latest/programming-guide.html-->
