@@ -1,3 +1,10 @@
+- [A brief history of big data](#)
+- [So what is Spark?](#)
+- [Step 1: Getting started with Spark](#)
+  - [Understanding the need for RDDs](#)
+    - [Spark UI](#)
+      - [Basic commands](#)
+        - [What I've learned](#)
 ---
 layout: page
 title: Spark, from dummy to expert
